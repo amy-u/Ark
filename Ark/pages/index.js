@@ -1,5 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import PetInfo from "./PetInfo";
+import Petslog from "./Petslog";
+
+import { Button } from "@material-ui/core";
 
 export default function Home() {
   return (
@@ -10,50 +13,20 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>
-          Welcome to Ark!
-        </h1>
+        <h1>Welcome to Ark!</h1>
 
         {/* Need button link to Medical/Vet */}
 
-        <p>
-          Reminders for all your pets needs
-        </p>
+        <p>Reminders for all your pets needs</p>
 
-        <div>
-          {/* Pet information Card */}
-            <h4>Your kids</h4>
-            {/* Pet name here */}
-            <h3>Jack</h3>
-            <p>
-              <Image
-                src="/dogProfile.jpg"
-                alt="Picture of pet"
-                width={500}
-                height={500}
-              />
-             </p>
-             <p>
-               <h4>Date of Birth:</h4>
-               <h4>Allergies/ food sensitivity:</h4>
-             </p>
-             <p>
-               <h4>Favorite food:</h4>
-               <h4>Hates Food:</h4>
-             </p>
+        <PetInfo />
 
-             {/* Needs an edit button to form*/}
+        <Button href="/PetForm">Edit Page</Button>
+        <Button href="/MedicalVet">Medical Info</Button>
 
-        </div>
-
-        <div>
-          {/* Pet Logs */}
-
-
-
-        </div>
+        {/* Pet Logs */}
+        <Petslog />
       </main>
-
     </div>
-  )
+  );
 }
